@@ -6,9 +6,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "@radix-ui/react-select": "^1.2.1",
+    "@tailwindcss/forms": "^0.5.3",
+    "class-variance-authority": "^0.4.0",
+    "clsx": "^1.2.1",
+    "eventsource-parser": "^0.1.0",
+    "framer-motion": "^10.2.4",
+    "lucide-react": "^0.125.0",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-use-measure": "^2.1.1",
+    "tailwind-merge": "^1.10.0",
+    "tailwindcss-animate": "^1.0.5"
   },
   "devDependencies": {
     "@types/node": "18.11.3",
