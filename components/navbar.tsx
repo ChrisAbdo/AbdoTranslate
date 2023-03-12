@@ -20,7 +20,10 @@ export default function Navbar() {
           <Button
             variant="default"
             onClick={() => {
-              window.open("https://www.github.com/chrisabdo", "_blank");
+              window.open(
+                "https://github.com/ChrisAbdo/AbdoTranslate",
+                "_blank"
+              );
             }}
           >
             <Github />
