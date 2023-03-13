@@ -9,10 +9,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../components/ui/select";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "../components/ui/alert-dialog";
+
 import { ArrowLeftRight, Loader2, Volume2 } from "lucide-react";
 import { Button } from "../components/ui/button";
+import { useToast } from "../utils/hooks/use-toast";
 
 const Home: NextPage = () => {
+  const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [bio, setBio] = useState("");
   const [vibe, setVibe] = useState("Spanish");
@@ -220,12 +234,36 @@ const Home: NextPage = () => {
                           onClick={() => {
                             // @ts-ignore
                             navigator.clipboard.writeText(generatedBios);
+                            toast({
+                              title: "Copied to clipboard",
+                              description: "Thanks for using the app!",
+                            });
                           }}
                           variant="outline"
                         >
                           Copy
                         </Button>
-                        <Button variant="outline">Share</Button>
+                        {/*  */}
+                        <AlertDialog>
+                          <AlertDialogTrigger>
+                            <Button variant="outline">Share</Button>
+                          </AlertDialogTrigger>
+                          <AlertDialogContent>
+                            <AlertDialogHeader>
+                              <AlertDialogTitle>
+                                Share to social media
+                              </AlertDialogTitle>
+                              <AlertDialogDescription>
+                                I just learned how to translate text to any
+                                language using AbdoTranslate. Check it out!
+                              </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                              <AlertDialogCancel>Cancel</AlertDialogCancel>
+                              <AlertDialogAction>Continue</AlertDialogAction>
+                            </AlertDialogFooter>
+                          </AlertDialogContent>
+                        </AlertDialog>
                       </motion.div>
                     </div>
                   )}
